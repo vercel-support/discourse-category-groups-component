@@ -3,8 +3,6 @@ import { action } from "@ember/object";
 import { service } from "@ember/service";
 import { slugify } from "discourse/lib/utilities";
 import { i18n } from "discourse-i18n";
-import { categoryBadgeHTML } from "discourse/helpers/category-link";
-import { htmlSafe } from "@ember/template";
 
 function parseSettings(settings) {
   return settings.split("|").map((i) => {
@@ -39,15 +37,6 @@ export default class CategoriesGroups extends Component {
     );
   }
 
-  categoryName(category) {
-    return htmlSafe(
-      categoryBadgeHTML(category, {
-        allowUncategorized: true,
-        link: false,
-      })
-    );
-  }
-
   get categoryGroupList() {
     const parsedSettings = parseSettings(settings.category_groups);
     const extraLinks = JSON.parse(settings.extra_links || "[]");
@@ -63,6 +52,7 @@ export default class CategoriesGroups extends Component {
     const categoryGroupList = parsedSettings.reduce((groups, obj) => {
       const categoryArray = obj.categories.split(",").map((str) => str.trim());
       const categoryGroup = [];
+      console.log(categoryArray);
 
       // Iterate through each category/link in the order specified in settings
       categoryArray.forEach((categoryOrLinkId) => {
