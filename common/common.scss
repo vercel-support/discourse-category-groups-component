@@ -19,6 +19,11 @@
   li.category-box {
     width: unset;
     margin: 0;
+    transition: background-color .25s;
+
+    &:hover, &:focus {
+      background-color: var(--primary-50, rgba(230,230,230,0.5));
+    }
   }
 
   .category-details {
@@ -179,6 +184,10 @@
       border: 1px solid;
       border-bottom: 8px solid;
       transition: all 0.25s;
+
+      &:hover, &:focus {
+        background-color: var(--primary-50, rgba(230,230,230,0.5));
+      }
 
       .category-box-inner {
         border: none;
