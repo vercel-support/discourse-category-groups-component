@@ -52,7 +52,6 @@ export default class CategoriesGroups extends Component {
     const categoryGroupList = parsedSettings.reduce((groups, obj) => {
       const categoryArray = obj.categories.split(",").map((str) => str.trim());
       const categoryGroup = [];
-      console.log(categoryArray);
 
       // Iterate through each category/link in the order specified in settings
       categoryArray.forEach((categoryOrLinkId) => {
