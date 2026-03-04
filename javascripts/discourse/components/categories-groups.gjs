@@ -221,8 +221,6 @@ export default class CategoriesGroups extends Component {
                             </a>
                           </div>
 
-                          <hr style="margin-top: 0; border-color:#{{c.color}}"/>
-
                           <div class="description">
                             {{htmlSafe c.description_excerpt}}
                           </div>
